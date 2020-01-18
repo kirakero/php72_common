@@ -21,6 +21,7 @@ RUN apt-get update && apt-get install -y \
 
 RUN a2enmod rewrite expires
 COPY opcache.ini /usr/local/etc/php/conf.d/opcache.ini
+COPY vhost.conf /etc/apache2/sites-available/000-default.conf
 
 # Composer Globals
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
